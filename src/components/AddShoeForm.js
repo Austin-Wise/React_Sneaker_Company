@@ -1,5 +1,5 @@
 import React from 'react';
-import Noty from 'noty';
+
 
 class AddShoeForm extends React.Component {
 
@@ -16,11 +16,7 @@ class AddShoeForm extends React.Component {
             this.priceRef.current.value === "" ||
             this.descRef.current.value === "" ||
             this.imageRef.current.value === "") {
-            new Noty({
-                theme: 'mint',
-                type: 'error',
-                text: 'you have empty fields!'
-            }).show()
+            console.log("ERROR");
             return false;
         }
 

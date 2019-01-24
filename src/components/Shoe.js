@@ -18,10 +18,12 @@ class Shoe extends React.Component {
         /*isAvailable is set to boolean*/
         return (
             <li className="menu-shoe">
-                <img src={image} alt={name} />
+                <div className="imgHousing">
+                    <img src={image} alt={name} />
+                </div>
                 <h3 className="shoe-name">{name}
                     <span className="price">{formatPrice(price)}</span>
-                {/*Rather than showing only cents, we'll use the helper.js -> formatPrice to show the proper price. */}
+                    {/*Rather than showing only cents, we'll use the helper.js -> formatPrice to show the proper price. */}
                 </h3>
                 <p>{desc}</p>
                 <button disabled={!isAvailable} onClick={() => this.props.addToOrder(this.props.index)}>

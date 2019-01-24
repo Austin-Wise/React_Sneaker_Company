@@ -4,13 +4,26 @@ import Inventory from './Inventory';
 import sampleShoes from '../sample-shoes';
 import Shoe from './Shoe';
 import Order from './Order';
+import base from '../base';
 
 class App extends React.Component {
 
   state = {
     shoes: {},
     order: {}
+  };
+  componentDidMount() {
+    const { params } = this.props.match;
+    this.ref = base.syncState(`${params.storeId}/shoes`, {
+      context: this,
+      state: 'shoes'
+    })
+  };
+
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
   }
+  //Prevent Memory Leaks by backing out each time you change a store.
 
   addShoe = shoe => {
     /*TO UPDATE STATE:
