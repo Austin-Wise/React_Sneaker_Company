@@ -40,7 +40,7 @@ const shoes = {
     image: "/images/Pharrell-x-adidas-chinese-new-year.jpg",
     desc:
       "the Crazy BYW flaunts ‘AMBITION’ text embroidered on the upper, while the Solar Hu Glide opts for a subtler ‘Fú’ symbol",
-    price: 209.99,
+    price: 20999,
     status: "available"
   },
 
@@ -57,7 +57,7 @@ const shoes = {
     name: "Stan Smith CNY",
     image: "/images/Adidas-Stan-Smith-Chinese-New-Year.jpeg",
     desc: "The composition recognises the year of the rooster with an embroidered depiction of the early riser on the heel, and glossy black leather coupled with a bone-white midsole. ",
-    price: 90.00,
+    price: 9000,
     status: "available"
   }
 };
