@@ -78,31 +78,33 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="SneakerCo">
-        <div className="menu">
-          <Header tagline="Your Choice Shoe Warehouse" />
-          <ul className="shoes">
-            {/* render out the array of shoes. As you cant map out an object, you use Object.keys...
+      <div className="background-wrap">
+        <div className="SneakerCo">
+          <div className="menu">
+            <Header tagline="we've got the goods" />
+            <ul className="shoes">
+              {/* render out the array of shoes. As you cant map out an object, you use Object.keys...
             which gives you all of the keys to reference the size of the array we want...
             Error: Each child in an array or iterator should have a unique "key" prop.
                 ^^--React needs to be fast... it will still work as is, but it will continue to throw
                     errors.. You need a unique identifier, so we'll give the property of Key   and what better
                     to use than the key for the unique identifier. */}
 
-            {Object.keys(this.state.shoes).map(key => (
-              <Shoe key={key} index={key} details={this.state.shoes[key]} addToOrder={this.addToOrder} />
-            ))}
-            {/*How to access the key if it is not available: you have to pass it a second time AS A PROP 
+              {Object.keys(this.state.shoes).map(key => (
+                <Shoe key={key} index={key} details={this.state.shoes[key]} addToOrder={this.addToOrder} />
+              ))}
+              {/*How to access the key if it is not available: you have to pass it a second time AS A PROP 
             as something other than the key... as it is reserved*/}
 
-          </ul>
-        </div>
-        {/*You can also pass everything down by using the spread operator {...this.state} but for scalability reasons...
+            </ul>
+          </div>
+          {/*You can also pass everything down by using the spread operator {...this.state} but for scalability reasons...
       you may not want to pass down everything you run into*/}
-        <Order {...this.state} />
-        <Inventory addShoe={this.addShoe} loadSampleShoes={this.loadSampleShoes} />
-        {/*To pass the method addshoe down into AddshoeForm, you
+          <Order {...this.state} />
+          <Inventory addShoe={this.addShoe} loadSampleShoes={this.loadSampleShoes} />
+          {/*To pass the method addshoe down into AddshoeForm, you
           pass it as a property!*/}
+        </div>
       </div>
     );
   }

@@ -59,7 +59,7 @@ class AddShoeForm extends React.Component {
                 </select>
 
                 <textarea name="desc" ref={this.descRef} placeholder="desc" />
-                <input name="image" ref={this.imageRef} type="text" placeholder="image" />
+                <input name="image" ref={this.imageRef} type="text" placeholder="image url" />
                 <button type="submit">+ Add Shoe</button>
             </form>
         )

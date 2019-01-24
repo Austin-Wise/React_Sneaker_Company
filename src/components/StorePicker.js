@@ -56,17 +56,19 @@ class StorePicker extends React.Component {
         it is useful when dealing with components that may 
         require sibling elements... this may be seen as an 
         alternative to a wrapper...*/}
-        <form className="store-selector" onSubmit={this.goToStore}>
-          <h2>Please Enter a Store</h2>
-          <input
-            type="text"
-            ref={this.myInput}
-            placeholder="Store Name"
-            defaultValue={getFunName()}
-            required
-          />
-          <button type="submit">Visit Store -></button>
-        </form>
+        <div className="background-wrap1">
+          <form className="store-selector" onSubmit={this.goToStore}>
+            <h2>Please Enter a Store</h2>
+            <input
+              type="text"
+              ref={this.myInput}
+              placeholder="Store Name"
+              defaultValue={getFunName()}
+              required
+            />
+            <button type="submit">Visit Store -></button>
+          </form>
+        </div>
       </React.Fragment>
     );
   }

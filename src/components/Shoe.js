@@ -21,15 +21,17 @@ class Shoe extends React.Component {
                 <div className="imgHousing">
                     <img src={image} alt={name} />
                 </div>
-                <h3 className="shoe-name">{name}
-                    <span className="price">{formatPrice(price)}</span>
-                    {/*Rather than showing only cents, we'll use the helper.js -> formatPrice to show the proper price. */}
-                </h3>
-                <p>{desc}</p>
-                <button disabled={!isAvailable} onClick={() => this.props.addToOrder(this.props.index)}>
-                    {isAvailable ? 'Add to Order' : 'Sold Out'}
-                </button>
-                {/*Using a Ternary operator here to change the text inside the button based on (!)Disabled*/}
+                <div className="visContain">
+                    <h3 className="shoe-name">{name}
+                        <span className="price">{formatPrice(price)}</span>
+                        {/*Rather than showing only cents, we'll use the helper.js -> formatPrice to show the proper price. */}
+                    </h3>
+                    <p>{desc}</p>
+                    <button disabled={!isAvailable} onClick={() => this.props.addToOrder(this.props.index)}>
+                        {isAvailable ? 'Add to Order' : 'Sold Out'}
+                    </button>
+                    {/*Using a Ternary operator here to change the text inside the button based on (!)Disabled*/}
+                </div>
             </li>
         )
     }

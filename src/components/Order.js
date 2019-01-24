@@ -16,9 +16,12 @@ class Order extends React.Component {
     return (
       <li key={key}>
         {count} x {shoe.name}
-        {formatPrice(shoe.price)}
+        <p className="itemPrice">
+          {formatPrice(shoe.price)}
+        </p>
       </li>);
   };
+
 
   render() {
     const orderIds = Object.keys(this.props.order);

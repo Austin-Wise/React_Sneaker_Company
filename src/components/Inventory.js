@@ -12,7 +12,7 @@ class Inventory extends React.Component {
             here because the addShoe method does not reside here, it is
             simply being passed through via props.
         */}
-        <button onClick={this.props.loadSampleShoes}>Load Samples Shoes</button>
+        <button className="loadSampleShoes" onClick={this.props.loadSampleShoes}>Load Samples Shoes</button>
         {/* LoadSampleShoes loads shoes so you dont have to... if you want.. */}
       </div>
     );
