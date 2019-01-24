@@ -21,7 +21,7 @@ class AddShoeForm extends React.Component {
         }
         //3. Pulling in the Shoe from App.js
         this.props.addShoe(shoe);
-        //console.log(shoe);
+        console.log(shoe);
 
         //refresh the form
         //  console.log(e.currentTarget);
@@ -43,13 +43,13 @@ class AddShoeForm extends React.Component {
                 <input name="price" type="text" ref={this.priceRef} placeholder="price" />
 
                 <select name="status" ref={this.statusRef}>
-                    <option value="available">Fresh!</option>
+                    <option value="available">In Stock!</option>
                     <option value="unavailable">Sold Out!</option>
                 </select>
 
                 <textarea name="desc" ref={this.descRef} placeholder="desc" />
                 <input name="image" ref={this.imageRef} type="text" placeholder="image" />
-                <button type="submit">+ Add shoe</button>
+                <button type="submit">+ Add Shoe</button>
             </form>
         )
     }
