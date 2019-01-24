@@ -9,9 +9,7 @@ import React from "react";
 //Destructuring props into individual variables by const Header = ({ tagline, age }) => ( ... <span>{tagline}</span> ... )
 const Header = props => (
     <header className="top">
-        <h1>
-            Fresh Kicks Superstore
-    </h1>
+        <h1>Fresh Kicks</h1>
         <h3 className="tagline">
             <span>{props.tagline}</span>
         </h3>
@@ -24,9 +22,9 @@ export default Header;
 //   render() {
 //     return (
 //       <header className="top">
-//           <h1>
-//              Fresh Kicks Superstore
-//           </h1>
+//         <h1>
+//           Fresh Kicks
+//         </h1>
 //         <h3 className="tagline">
 //           <span>{this.props.tagline}</span>
 //         </h3>
