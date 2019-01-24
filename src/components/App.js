@@ -54,9 +54,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="catch-of-the-day">
+      <div className="SneakerCo">
         <div className="menu">
-          <Header tagline="Whats New" />
+          <Header tagline="Find your Kicks" />
         </div>
         <Order />
         <Inventory addshoe={this.addshoe} loadSampleShoes={this.loadSampleShoes} />
