@@ -1,15 +1,15 @@
 import React from 'react';
 import Header from './Header';
-import Order from './Order';
 import Inventory from './Inventory';
 import sampleShoes from '../sample-shoes';
 import Shoe from './Shoe';
+import Order from './Order';
 
 class App extends React.Component {
 
   state = {
     shoes: {},
-    orders: {}
+    order: {}
   }
 
   addShoe = shoe => {
@@ -53,11 +53,21 @@ class App extends React.Component {
     this.setState({ shoes: sampleShoes });
   }
 
+  addToOrder = (key) => {
+    //1. take a copy of state
+    const order = { ...this.state.order }
+    //2. either add to the order, or update to it.
+    order[key] = order[key] + 1 || 1;
+    //3. Call setState to update our state object
+    this.setState({ order });
+  }
+
+
   render() {
     return (
       <div className="SneakerCo">
         <div className="menu">
-          <Header tagline="Find your Kicks" />
+          <Header tagline="Your Choice Shoe Warehouse" />
           <ul className="shoes">
             {/* render out the array of shoes. As you cant map out an object, you use Object.keys...
             which gives you all of the keys to reference the size of the array we want...
@@ -66,10 +76,17 @@ class App extends React.Component {
                     errors.. You need a unique identifier, so we'll give the property of Key   and what better
                     to use than the key for the unique identifier. */}
 
-            {Object.keys(this.state.shoes).map(key => <Shoe key={key} details={this.state.shoes[key]} />)}
+            {Object.keys(this.state.shoes).map(key => (
+              <Shoe key={key} index={key} details={this.state.shoes[key]} addToOrder={this.addToOrder} />
+            ))}
+            {/*How to access the key if it is not available: you have to pass it a second time AS A PROP 
+            as something other than the key... as it is reserved*/}
+
           </ul>
         </div>
-        <Order />
+        {/*You can also pass everything down by using the spread operator {...this.state} but for scalability reasons...
+      you may not want to pass down everything you run into*/}
+        <Order {...this.state} />
         <Inventory addShoe={this.addShoe} loadSampleShoes={this.loadSampleShoes} />
         {/*To pass the method addshoe down into AddshoeForm, you
           pass it as a property!*/}

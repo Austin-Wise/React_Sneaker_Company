@@ -1,4 +1,5 @@
 import React from 'react';
+import Noty from 'noty';
 
 class AddShoeForm extends React.Component {
 
@@ -11,6 +12,18 @@ class AddShoeForm extends React.Component {
     createShoe = (e) => {
         //1. Stop form from submitting
         e.preventDefault();
+        if (this.nameRef.current.value === "" ||
+            this.priceRef.current.value === "" ||
+            this.descRef.current.value === "" ||
+            this.imageRef.current.value === "") {
+            new Noty({
+                theme: 'mint',
+                type: 'error',
+                text: 'you have empty fields!'
+            }).show()
+            return false;
+        }
+
         //2. Create Shoe object
         const shoe = {
             name: this.nameRef.current.value,
@@ -19,6 +32,8 @@ class AddShoeForm extends React.Component {
             desc: this.descRef.current.value,
             image: this.imageRef.current.value
         }
+
+
         //3. Pulling in the Shoe from App.js
         this.props.addShoe(shoe);
         console.log(shoe);
