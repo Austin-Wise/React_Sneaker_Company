@@ -3,6 +3,7 @@ import Header from './Header';
 import Order from './Order';
 import Inventory from './Inventory';
 import sampleShoes from '../sample-shoes';
+import Shoe from './Shoe';
 
 class App extends React.Component {
 
@@ -57,6 +58,9 @@ class App extends React.Component {
       <div className="SneakerCo">
         <div className="menu">
           <Header tagline="Find your Kicks" />
+          <ul class="shoes">
+            <Shoe />
+          </ul>
         </div>
         <Order />
         <Inventory addShoe={this.addShoe} loadSampleShoes={this.loadSampleShoes} />

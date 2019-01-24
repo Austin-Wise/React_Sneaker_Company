@@ -13,6 +13,7 @@ class Inventory extends React.Component {
             simply being passed through via props.
         */}
         <button onClick={this.props.loadSampleShoes}>Load Samples Shoes</button>
+        {/* LoadSampleShoes loads shoes so you dont have to... if you want.. */}
       </div>
     );
   }
