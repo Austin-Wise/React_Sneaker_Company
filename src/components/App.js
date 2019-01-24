@@ -59,7 +59,14 @@ class App extends React.Component {
         <div className="menu">
           <Header tagline="Find your Kicks" />
           <ul class="shoes">
-            <Shoe />
+            {/* render out the array of shoes. As you cant map out an object, you use Object.keys...
+            which gives you all of the keys to reference the size of the array we want...
+            Error: Each child in an array or iterator should have a unique "key" prop.
+                ^^--React needs to be fast... it will still work as is, but it will continue to throw
+                    errors.. You need a unique identifier, so we'll give the property of Key   and what better
+                    to use than the key for the unique identifier. */}
+
+            {Object.keys(this.state.shoes).map(key => <Shoe key={key} details={this.state.shoes[key]} />)}
           </ul>
         </div>
         <Order />
