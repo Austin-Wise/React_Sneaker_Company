@@ -2,16 +2,16 @@ import React from 'react';
 import Header from './Header';
 import Order from './Order';
 import Inventory from './Inventory';
-import './App.css';
+import sampleShoes from '../sample-shoes';
 
 class App extends React.Component {
 
   state = {
     shoes: {},
-    orders
+    orders: {}
   }
 
-  addshoe = shoe => {
+  addShoe = shoe => {
     /*TO UPDATE STATE:
       use the existing setState api.
       1. Take a copy of the existing state. You never want to reach into state
@@ -59,7 +59,7 @@ class App extends React.Component {
           <Header tagline="Find your Kicks" />
         </div>
         <Order />
-        <Inventory addshoe={this.addshoe} loadSampleShoes={this.loadSampleShoes} />
+        <Inventory addShoe={this.addShoe} loadSampleShoes={this.loadSampleShoes} />
         {/*To pass the method addshoe down into AddshoeForm, you
           pass it as a property!*/}
       </div>
